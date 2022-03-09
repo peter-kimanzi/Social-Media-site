@@ -10,8 +10,7 @@ This site allows works exactly like Facebook with some added functionalities
 
 ## Built By [Peter Kimanzi](https://github.com/peter-kimanzi)
 
-## View screenshots of this project [csreenshots](https://peterkimanzi.netlify.app/careerpal.html
-) 
+## View screenshots of this project [sreenshots](https://peterkimanzi.netlify.app/careerpal.html) 
 
 ## License
 
