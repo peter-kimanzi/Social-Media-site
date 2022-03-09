@@ -1,0 +1,22 @@
+{$message}
+<div class="page-inner">
+	<div>
+		{$lng->profile_images_desc}
+	</div>
+</div>
+<label for="coverselect" class="page-input-title-img-wall" style="background: url({$cover}) center center;"></label>
+<label for="avatarselect" class="page-input-title-img" style="background: url({$image}) center center;"></label>
+<div class="page-inner">
+	<div class="page-input-content">
+		<div class="page-input-container">
+			<form id="avatar" class="uploadForm" action="{$form_url}avatar" method="POST" enctype="multipart/form-data">
+				<input type="file" id="avatarselect" name="avatarselect[]" style="display: none;">
+				{$token_input}
+			</form>
+			<form id="cover" class="uploadForm" action="{$form_url}avatar" method="POST" enctype="multipart/form-data">
+				<input type="file" id="coverselect" name="coverselect[]" style="display: none;">
+				{$token_input}
+			</form>
+		</div>
+	</div>
+</div>

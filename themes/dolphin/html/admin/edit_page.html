@@ -1,0 +1,99 @@
+{$message}
+<div class="page-inner"><div class="users-button button-normal"><a href="{$url}/index.php?a=admin&b=manage_pages&delete={$id}&token_id={$token_id}">{$lng->delete}</a></div>{$page}</div>
+<div class="message-divider" style="float: inherit;"></div>
+<form action="{$url}/index.php?a=admin&b=manage_pages&c={$current_name}" method="POST" enctype="multipart/form-data">
+	{$token_input}
+	<div class="page-inner">
+		<div class="page-input-container">
+			<div class="page-input-title">{$lng->ttl_verified}</div>
+			<div class="page-input-content">
+			<select name="page_verified">
+				<option value="0" {$off_v}>{$lng->no}</option>
+				<option value="1" {$on_v}>{$lng->yes}</option>
+			</select>
+			</div>
+		</div>
+		
+		<div class="page-input-container">
+			<div class="page-input-title">{$lng->title_admin}</div>
+			<div class="page-input-content">
+				<input type="text" name="author" value="{$author}"{$disabled}>
+			</div>
+		</div>
+	</div>
+	
+	<div class="message-divider"></div>
+	
+	<div class="page-inner">
+		<div class="page-input-container">
+			<div class="page-input-title">{$lng->name}</div>
+			<div class="page-input-content">
+				<input type="text" name="page_name" value="{$current_name}"{$disabled}>
+				<div class="page-input-sub">{$lng->page_sub_name}</div>
+			</div>
+		</div>
+		
+		<div class="page-input-container">
+			<div class="page-input-title">{$lng->title}</div>
+			<div class="page-input-content">
+				<input type="text" name="page_title" value="{$current_title}">
+				<div class="page-input-sub">{$lng->page_sub_title}</div>
+			</div>
+		</div>
+		
+		<div class="page-input-container">
+			<div class="page-input-title">{$lng->category}</div>
+			<div class="page-input-content">
+			<select name="page_category">
+				<option value="0">{$lng->select_category}</option>
+				<option value="1"{$page_1}>{$lng->page_1}</option>
+				<option value="2"{$page_2}>{$lng->page_2}</option>
+				<option value="3"{$page_3}>{$lng->page_3}</option>
+				<option value="4"{$page_4}>{$lng->page_4}</option>
+				<option value="5"{$page_5}>{$lng->page_5}</option>
+				<option value="6"{$page_6}>{$lng->page_6}</option>
+			</select>
+			<div class="page-input-sub">{$lng->page_sub_category}</div>
+			</div>
+		</div>
+
+		{$start_optional}
+		<div class="page-input-container">
+			<div class="page-input-title">{$lng->address}</div>
+			<div class="page-input-content">
+				<input type="text" name="page_address" value="{$current_address}">
+				<div class="page-input-sub">{$lng->page_sub_address}</div>
+			</div>
+		</div>
+		
+		<div class="page-input-container">
+			<div class="page-input-title">{$lng->ttl_website}</div>
+			<div class="page-input-content">
+				<input type="text" name="page_website" value="{$current_website}">
+				<div class="page-input-sub">{$lng->page_sub_website}</div>
+			</div>
+		</div>
+		
+		<div class="page-input-container">
+			<div class="page-input-title">{$lng->phone}</div>
+			<div class="page-input-content">
+				<input type="text" name="page_phone" value="{$current_phone}">
+				<div class="page-input-sub">{$lng->page_sub_phone}</div>
+			</div>
+		</div>
+		{$end_optional}
+		<div class="page-input-container">
+			<div class="page-input-title">{$lng->description}</div>
+			<div class="page-input-content">
+				<textarea class="ads" name="page_desc">{$current_desc}</textarea>
+				<div class="page-input-sub">{$lng->page_sub_description}</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="message-divider"></div>
+	
+	<div class="page-inner">
+		<div class="page-input-title"></div><input type="submit" value="{$lng->save_changes}">
+	</div>
+</form>

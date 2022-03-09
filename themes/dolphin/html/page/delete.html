@@ -1,0 +1,16 @@
+<div class="page-container" id="delete_page">
+	<div class="page-content">
+		<div class="page-header">{$lng->delete_page}</div>
+		{$message}
+		<div class="page-inner">
+			{$lng->page_delete_desc}
+		</div>
+		<input type="hidden" name="a" value="page">
+		<input type="hidden" name="delete" value="{$id}">
+		<div class="message-divider"></div>
+		
+		<div class="page-inner">
+			<div class="page-input-title"></div><a href="{$url}/index.php?a=page&delete={$id}&token_id={$token_id}"><input type="submit" value="{$lng->delete_page}"></a>
+		</div>
+	</div>
+</div>

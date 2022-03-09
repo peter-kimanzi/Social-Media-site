@@ -1,0 +1,29 @@
+{$ad1}
+<div class="row-body{$content_class}">
+	<div class="grid-container">
+		<div class="grid-content" id="messages">
+			{$top}
+			{$rows}
+		</div>
+		<div class="grid-sidebar">
+			{$sidebar}
+		</div>
+	</div>
+</div>
+{$ad2}
+<script type="text/javascript">
+// Remove the old user id, if any was set (prevent storing multiple ids to be checked when on messages page)
+if(typeof old_fid != 'undefined') {
+	// Get the array element and remove it
+	var i = friends_windows.indexOf(old_fid);
+	if(i != -1) {
+		friends_windows.splice(i, 1);
+	}
+}
+
+// Add the current user id to be checked
+addFriendArray('{$fid}');
+
+// Store the current user id to be checked when the page gets reloaded
+old_fid = '{$fid}';
+</script>

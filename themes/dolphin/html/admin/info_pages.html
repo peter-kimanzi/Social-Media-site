@@ -1,0 +1,51 @@
+{$message}
+<div class="page-inner"{$show}><div class="users-button button-normal"><a href="{$url}/index.php?a=admin&b=info_pages&delete={$current_id}&deleted={$current_title}&token_id={$token_id}">{$lng->delete}</a></div>{$page}</div>
+<div class="message-divider" {$show} style="float: inherit;"></div>
+<form action="{$url}/index.php?a=admin&b=info_pages{$form}" method="POST" enctype="multipart/form-data">
+	{$token_input}
+	<div class="page-inner">
+		<div class="page-input-container">
+			<div class="page-input-title">{$lng->page_title}</div>
+			<div class="page-input-content">
+				<input name="page_title" value="{$current_title}">
+				<div class="page-input-sub">{$lng->sub_page_title}</div>
+			</div>
+		</div>
+		
+		<div class="page-input-container">
+			<div class="page-input-title">{$lng->page_url}</div>
+			<div class="page-input-content">
+				<input name="page_url" value="{$current_url}">
+				<div class="page-input-sub">{$lng->sub_page_url}</div>
+			</div>
+		</div>
+		
+		<div class="page-input-container">
+			<div class="page-input-title">{$lng->public_page}</div>
+			<div class="page-input-content">
+				<select name="page_public">
+					<option value="1"{$ppon}>{$lng->yes}</option>
+					<option value="0"{$ppoff}>{$lng->no}</option>
+				</select>
+				<div class="page-input-sub">{$lng->sub_public_page}</div>
+			</div>
+		</div>
+		
+		<div class="page-input-container">
+			<div class="page-input-title">{$lng->page_content}</div>
+			<div class="page-input-content">
+				<textarea name="page_content">{$current_content}</textarea>
+				<div class="page-input-sub">{$lng->sub_page_content}</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="message-divider"></div>
+	
+	<div class="page-inner">
+		<div class="page-input-title"></div><input type="submit" value="{$btn_name}">
+	</div>
+</form>
+</div>
+<div>
+{$pages_list}

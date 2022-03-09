@@ -1,0 +1,43 @@
+{$message}
+<form action="{$form_url}privacy" method="post">
+<div class="page-inner">
+	{$token_input}
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->ttl_profile}</div>
+		<div class="page-input-content">
+		<select name="private">
+			<option value="0" {$off}>{$lng->public}</option>
+			<option value="2" {$semi}>{$lng->friends}</option>
+		</select>
+		<div class="page-input-sub">{$lng->sub_profile}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->ttl_messages}</div>
+		<div class="page-input-content">
+		<select name="privacy">
+			<option value="1" {$poff}>{$lng->public}</option>
+			<option value="2" {$psemi}>{$lng->friends}</option>
+			<option value="0" {$pon}>{$lng->private}</option>
+		</select>
+		<div class="page-input-sub">{$lng->sub_messages}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->ttl_offline}</div>
+		<div class="page-input-content">
+		<select name="offline">
+			<option value="0" {$coff}>{$lng->opt_offline_off}</option>
+			<option value="1" {$con}>{$lng->opt_offline_on}</option>
+		</select>
+		<div class="page-input-sub">{$lng->sub_offline}</div>
+		</div>
+	</div>
+</div>
+<div class="message-divider"></div>
+<div class="page-inner">
+	<div class="page-input-title"></div><input type="submit" value="{$lng->save_changes}"/>
+</div>
+</form>

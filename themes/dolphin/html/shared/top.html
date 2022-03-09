@@ -1,0 +1,42 @@
+<div class="message-container">
+	<form id="postForm" name="form" action="{$url}/requests/post_message.php" method="POST" enctype="multipart/form-data">
+	{$token_input}
+		<div class="message-form-content">
+			<div class="message-form-header">
+				<div class="message-form-user"><img src="{$avatar}"></div>
+				{$lng->form_title}
+				<div class="message-form-private"></div>
+				<div class="message-loader" id="post-loader9999999999" style="visibility: hidden"><div class="preloader"></div></div>
+			</div>
+
+			<div class="message-form-inner">
+				<textarea id="post9999999999" class="message-form" placeholder="{$lng->message_form}" name="message"></textarea>
+			</div>
+			<div id="plugins-forms" style="display: none;"></div>
+
+			<input type="hidden" name="privacy" id="message-privacy" value="{$private_message}">
+			<input type="hidden" name="group" id="message-group" value="{$group}">
+			<input type="hidden" name="page" id="message-page" value="{$page}">
+
+			<div class="selected-files" id="queued-files"></div>
+			<div class="message-form-input"><input type="text" name="value" id="form-value"></div>
+			<div id="values">
+				<label id="open_images" title="{$lng->label_image}"><img src="{$url}/{$theme_url}/images/icons/events/camera.svg"></label>
+				<input type="radio" name="type" value="video" id="video" class="input_hidden"><label for="video" title="{$lng->label_video}"><img src="{$url}/{$theme_url}/images/icons/events/video.svg"></label>
+				<input type="radio" name="type" value="map" id="map" class="input_hidden"><label for="map" title="{$lng->label_map}"><img src="{$url}/{$theme_url}/images/icons/events/map.svg"></label>
+				<input type="radio" name="type" value="music" id="music" class="input_hidden"><label for="music" title="{$lng->label_music}"><img src="{$url}/{$theme_url}/images/icons/events/audio.svg"></label>
+				{$plugins}
+				<input name="images[]" id="images" size="27" type="file" class="inputImage" title="{$lng->label_image}" multiple="multiple" accept="image/*">
+			</div>
+
+			<div type="button" name="action" class="message-btn button-active" value="Post"><a onclick="startUpload()">{$lng->post}</a></div>
+			<div class="message-btn button-normal" onclick="messageMenu(9999999999, 1)" title="{$lng->change_privacy}" id="privacy-button"{$style}><a><div id="privacy-btn" class="privacy-icons {$privacy_class}-icon"></div></a></div>
+			<div id="message-menu9999999999" class="message-menu-container message-menu-privacy">
+				<div class="message-menu-row" onclick="postPrivacy(1)">{$lng->public}</div>
+				<div class="message-menu-row" onclick="postPrivacy(2)">{$lng->friends}</div>
+				<div class="message-menu-row" onclick="postPrivacy(0)">{$lng->private}</div>
+			</div>
+		</div>
+		<iframe id="frameForm" name="frameForm" src="" style="display: none"></iframe>
+	</form>
+</div>

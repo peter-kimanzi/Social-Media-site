@@ -1,0 +1,59 @@
+{$message}
+<div class="page-inner"><div class="users-button button-normal"><a href="{$url}/index.php?a=admin&b=manage_groups&delete={$id}&token_id={$token_id}">{$lng->delete}</a></div>{$group}</div>
+<div class="message-divider" style="float: inherit;"></div>
+<form action="{$url}/index.php?a=admin&b=manage_groups&c={$current_name}" method="POST" enctype="multipart/form-data">
+	{$token_input}
+	<div class="page-inner">
+		<div class="page-input-container">
+			<div class="page-input-title">{$lng->name}</div>
+			<div class="page-input-content">
+				<input type="text" name="group_name" value="{$current_name}"{$disabled}>
+				<div class="page-input-sub">{$lng->group_sub_name}</div>
+			</div>
+		</div>
+		
+		<div class="page-input-container">
+			<div class="page-input-title">{$lng->title}</div>
+			<div class="page-input-content">
+				<input type="text" name="group_title" value="{$current_title}">
+				<div class="page-input-sub">{$lng->group_sub_title}</div>
+			</div>
+		</div>
+		
+		<div class="page-input-container">
+			<div class="page-input-title">{$lng->privacy}</div>
+			<div class="page-input-content">
+			<select name="group_privacy">
+				<option value="0"{$privacy_public}>{$lng->public}</option>
+				<option value="1"{$privacy_private}>{$lng->private}</option>
+			</select>
+			<div class="page-input-sub">{$lng->group_sub_privacy}</div>
+			</div>
+		</div>
+		
+		<div class="page-input-container">
+			<div class="page-input-title">{$lng->posts}</div>
+			<div class="page-input-content">
+			<select name="group_posts">
+				<option value="0"{$posts_members}>{$lng->any_member}</option>
+				<option value="1"{$posts_admins}>{$lng->admins}</option>
+			</select>
+			<div class="page-input-sub">{$lng->group_sub_posts}</div>
+			</div>
+		</div>
+		
+		<div class="page-input-container">
+			<div class="page-input-title">{$lng->description}</div>
+			<div class="page-input-content">
+				<textarea class="ads" name="group_desc">{$current_desc}</textarea>
+				<div class="page-input-sub">{$lng->group_sub_description}</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="message-divider"></div>
+	
+	<div class="page-inner">
+		<div class="page-input-title"></div><input type="submit" value="{$lng->save_changes}">
+	</div>
+</form>

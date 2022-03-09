@@ -1,0 +1,58 @@
+{$message}
+<form action="{$url}/index.php?a=admin&b=manage_ads" method="post">
+<div class="page-inner">
+	{$token_input}
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->admin_ttl_ad1}</div>
+		<div class="page-input-content">
+			<textarea class="ads" name="ad1">{$ad1}</textarea>
+			<div class="page-input-sub">{$lng->admin_sub_ad1}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->admin_ttl_ad2}</div>
+		<div class="page-input-content">
+			<textarea class="ads" name="ad2">{$ad2}</textarea>
+			<div class="page-input-sub">{$lng->admin_sub_ad2}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->admin_ttl_ad3}</div>
+		<div class="page-input-content">
+			<textarea class="ads" name="ad3">{$ad3}</textarea>
+			<div class="page-input-sub">{$lng->admin_sub_ad3}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->admin_ttl_ad4}</div>
+		<div class="page-input-content">
+			<textarea class="ads" name="ad4">{$ad4}</textarea>
+			<div class="page-input-sub">{$lng->admin_sub_ad4}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->admin_ttl_ad5}</div>
+		<div class="page-input-content">
+			<textarea class="ads" name="ad5">{$ad5}</textarea>
+			<div class="page-input-sub">{$lng->admin_sub_ad5}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->admin_ttl_ad6}</div>
+		<div class="page-input-content">
+			<textarea class="ads" name="ad6">{$ad6}</textarea>
+			<div class="page-input-sub">{$lng->admin_sub_ad6}</div>
+		</div>
+	</div>
+
+</div>
+<div class="message-divider"></div>
+<div class="page-inner">
+	<div class="page-input-title"></div><input type="submit" value="{$lng->save_changes}">
+</div>
+</form>

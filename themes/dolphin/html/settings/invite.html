@@ -1,0 +1,62 @@
+<style>
+  .copy {
+    flex-grow: 1;
+  width: 50%;
+  margin: 0 auto;
+  padding-top: 20px;
+  }
+
+    .form{
+        position: relative;
+        width: 100%;
+        margin-top: 20px;
+    }
+    .input {
+    display: block;  
+    width: 100%;
+    border: 3px solid;
+    outline: 0;
+    background: #FFF;
+    font-size: 25px;
+    padding: 5px 4px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+  }
+  .button {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    transform: translateY(-50%);
+    border: 0;
+    outline: 0;
+    color: #FFF;
+    background: gray;
+    font-family: 'VT323', monospace;
+    font-size: 25px;
+    text-transform: uppercase;
+    padding: 0.08em 0.8em;
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+    
+    </style>
+    
+    {$invite_users}
+    
+    
+    <script>
+       (function() {
+  var copyButton = document.querySelector('.copy button');
+  var copyInput = document.querySelector('.copy input');
+  copyButton.addEventListener('click', function(e) {
+    e.preventDefault();
+    var text = copyInput.select();
+    document.execCommand('copy');
+  });
+
+  copyInput.addEventListener('click', function() {
+    this.select();
+  });
+})();
+    </script>

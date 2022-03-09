@@ -1,0 +1,112 @@
+<div class="bc-container">
+<div class="chat-plugin-container scrollable" id="chat-plugin-container" data-active-window="">{$smiles}</div>
+<input type="file" name="chatimage" id="chatimage" style="display: none;" accept="image/*">
+<div class="bc-friends-container desktop" id="chat-window-friends-list"><div class="bc-friends-header" onclick="minimizeChatWindow('friends-list')" data-state="maximized"><div class="bc-friends-username">{$lng->online_friends} (<span id="friends-count">0</span>)</div><div class="minimize_btn"></div><a href="{$privacy_url}" rel="loadpage" onclick="minimizeChatWindow('friends-list')"><div class="settings_btn c-s-icon"></div></a></div><div class="bc-friends-content scrollable" id="friends-list"></div><div class="c-w-input c-w-input-search"><input type="text" placeholder="{$lng->search_in_friends}" id="search-window"></div></div>
+</div>
+<div class="menu-image"><div class="menu_arrow"></div><div class="menu_img"><img src="{$avatar}" title="{$realname}"/></div></div>
+<a onclick="showNotification('', '1')"><div class="menu_btn" id="notifications_btn" title="{$lng->title_notifications}" rel="loadpage"><img src="{$url}/{$theme_url}/images/icons/notification.png" id="notifications_img"></div></a>
+<a onclick="showNotification('', '2')" id="messages_url"><div class="menu_btn" id="messages_btn" title="{$lng->title_messages}"><img src="{$url}/{$theme_url}/images/icons/message.png"></div></a>
+<a onclick="showNotification('', '3')"><div class="menu_btn" id="friends_btn" title="{$lng->friends}"><img src="{$url}/{$theme_url}/images/icons/friends.png"></div></a>
+{$admin_url}
+<div id="menu-dd-container" class="menu-dd-container">
+	<div class="menu-dd-content">
+		{$links}
+		{$extralink}
+		{$logoutmenu}
+	</div>
+</div>
+<div class="notification-container">
+	<div class="notification-content">
+		<div class="notification-inner n-i-extended">
+			<span id="global_page_url"><a href="{$notifications_url}" rel="loadpage"><strong>{$lng->view_all_notifications}</strong></a></span>
+			<span id="chat_page_url"><a href="{$chats_url}" rel="loadpage"><strong>{$lng->view_chat_notifications}</strong></a></span>
+			<span id="friends_page_url"><a href="{$friendships_url}" rel="loadpage"><strong>{$lng->view_confirmed_friendships}</strong></a></span>
+			<a onclick="showNotification('close')" title="{$lng->close_notifications}"><div class="delete_btn"></div></a>
+		</div>
+		<div id="notifications-content" class="scrollable"></div>
+		<div class="notification-row"><div class="notification-padding"><a href="{$settings_notifications_url}" rel="loadpage">{$lng->notifications_settings}</a></div></div>
+	</div>
+</div>
+<script>
+chatr = {$chatr};
+checkMessageTimeout = {$intervalm};
+checkChat(2);
+function checkNewNotifications(x) {
+    
+   
+    
+	// Retrieve the current notification values
+	xx = $("#friends_btn .notifications-number").html();
+	xy = $("#notifications_btn .notifications-number").html();
+	xz = $("#messages_btn .notifications-number").html();
+	
+	// If there are not current values, reset them to 0
+	if(!xx) {
+		xx = 0;
+	}
+	if(!xy) {
+		xy = 0;
+	}
+	if(!xz) {
+		xz = 0;
+	}
+	$.ajax({
+		type: "POST",
+		url: "{$url}/requests/check_notifications.php",
+		data: "for=1&token_id="+token_id,
+		success: function(html) {
+			// If the response does not include "No notifications" and is not empty show the notification
+			if(html.indexOf("{$lng->no_notifications}") == -1 && html !== "" && html !== "0") {
+				var result = jQuery.parseJSON(html);
+				if(result.response.global > 0) {
+					$("#notifications_btn").html(getNotificationImage()+'<span class="notifications-number-container"><span class="notifications-number">'+result.response.global+'</span></span>');
+				} else {
+					$("#notifications_btn").html(getNotificationImage());
+				}
+				if(result.response.friends > 0) {
+					$("#friends_btn").html(getFriendsImage()+'<span class="notifications-number-container"><span class="notifications-number">'+result.response.friends+'</span></span>');
+				} else {
+					$("#friends_btn").html(getFriendsImage());
+				}
+				if(result.response.messages > 0) {
+					$("#messages_btn").html(getMessagesImageUrl()+'<span class="notifications-number-container"><span class="notifications-number">'+result.response.messages+'</span></span>');
+				} else {
+					$("#messages_btn").html(getMessagesImageUrl());
+				}
+				
+	            totalNotifications = result.response.friends + result.response.global + result.response.messages;
+			    
+			    
+				// If the new value is higher than the current one, and the current one is not equal to 0
+				if(result.response.friends > xx && xx != 0 || result.response.friends == 1 && xx == 0) {
+					checkAlert();
+				} else if(result.response.global > xy && xy != 0 || result.response.global == 1 && xy == 0) {
+					checkAlert();
+				} else if(result.response.messages > xz && xz != 0 || result.response.messages == 1 && xz == 0) {
+					checkAlert();
+				}
+			}
+			stopNotifications = setTimeout(checkNewNotifications, {$intervaln});
+		}
+	});
+	notificationState = true;
+}
+
+
+checkNewNotifications();
+checkNewMessages();
+
+function getFriendsImage() {
+	return '<img src="{$url}/{$theme_url}/images/icons/friends.png">';
+}
+function getNotificationImage() {
+	return '<img src="{$url}/{$theme_url}/images/icons/notification.png">';
+}
+function getMessagesImageUrl() {
+	return '<img src="{$url}/{$theme_url}/images/icons/message.png">';
+}
+</script>
+{$audio_container}
+<div id="chat-window-model" style="display: none;">
+<div class="bc-friends-container bc-friends-user" id="chat-window-'+id+'" onclick="disableTitleAlert('+id+')" data-state="maximized"><div class="bc-friends-header" id="chat-header-'+id+'" onclick="minimizeChatWindow('+id+')"><div class="c-w-status" id="online-status-'+id+'"><!--<img src="'+status+'" class="sidebar-status-icon">--></div><div class="bc-friends-username"><a href="{$profile_url}'+username+'" rel="loadpage" onclick="minimizeChatWindow('+id+')">'+realname+'</a></div><a onclick="closeChatWindow(''+id+'')"><div class="delete_btn"></div></a><a href="{$settings_url}" rel="loadpage" onclick="minimizeChatWindow('+id+')"><div class="settings_btn c-s-icon"></div></a></div><div class="bc-friends-chat scrollable" id="bc-friends-chat-'+id+'"></div><div class="c-w-input"><input onkeydown="if(event.keyCode == 13) { postChat('+id+', 2)}" id="c-w-'+id+'" placeholder="{$lng->type_message}"><div class="preloader preloader-center" id="c-w-p-'+id+'" style="display: none; margin-top: 3px; margin-bottom: 4px;"></div><div class="c-w-icon c-w-icon-smiles" id="chat-smiles-'+id+'" onclick="chatPluginContainer('+id+')" title="{$lng->chat_smiles}"></div><label for="chatimage" data-userid="'+id+'" class="c-w-icon c-w-icon-picture chat-image-btn" title="{$lng->chat_picture}"></label><div data-userid="'+id+'" class="c-w-icon c-w-icon-camera chat-camera-btn" onclick="cameraModal()" title="{$lng->chat_camera}"></div>{$plugins}</div></div>
+</div>

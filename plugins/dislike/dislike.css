@@ -1,0 +1,30 @@
+.dislike_container {
+color: var(--plugin-color);
+float: right;
+}
+.dislike_btn {
+width: auto;
+padding-left: 18px;
+height: 18px;
+background-position-y: center;
+margin-left: 10px;
+line-height: 18px;
+background-image: url('icons/dislike.svg');
+background-size: 14px;
+background-repeat: no-repeat;	
+filter: var(--plugin-c-i-c);
+float: left;
+}
+.dislike_container img {
+vertical-align: middle;
+width: 16px;
+height: 16px;
+margin-top: -4px;
+}
+.rtl .dislike_container {
+float: left;
+}
+.rtl .dislike_btn {
+float: right;
+margin: 0 0 0 4px;
+}

@@ -1,0 +1,34 @@
+{$message}
+<form action="{$form_url}security" method="post">
+<div class="page-inner">
+	{$token_input}
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->ttl_current_password}</div>
+		<div class="page-input-content">
+			<input type="password" name="current_password">
+			<div class="page-input-sub">{$lng->sub_current_password}</div>
+		</div>
+	</div>
+</div>
+<div class="message-divider"></div>
+<div class="page-inner">
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->ttl_new_password}</div>
+		<div class="page-input-content">
+			<input type="password" name="password">
+			<div class="page-input-sub">{$lng->sub_new_password}</div>
+		</div>
+	</div>
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->ttl_repeat_password}</div>
+		<div class="page-input-content">
+			<input type="password" name="repeat_password">
+			<div class="page-input-sub">{$lng->sub_repeat_password}</div>
+		</div>
+	</div>
+</div>
+<div class="message-divider"></div>
+<div class="page-inner">
+	<div class="page-input-title"></div><input type="submit" value="{$lng->save_changes}">
+</div>
+</form>

@@ -1,0 +1,145 @@
+<div class="page-container" id="edit_page">
+	<div class="page-content">
+		<div class="page-header">{$page_title}</div>
+		{$message}
+		<form action="{$edit_url}" method="POST" enctype="multipart/form-data">
+			{$token_input}
+			<div class="page-inner">
+				<div class="page-input-container">
+					<div class="page-input-title">{$lng->name}</div>
+					<div class="page-input-content">
+					    <div data-tip="Tip: Do not include any space.">
+						    <input type="text" name="page_name" value="{$current_name}"{$disabled}>
+						   </div>
+						<div class="page-input-sub">{$lng->page_sub_name}</div>
+					</div>
+				</div>
+				
+				<div class="page-input-container">
+					<div class="page-input-title">{$lng->title}</div>
+					<div class="page-input-content">
+						<input type="text" name="page_title" value="{$current_title}">
+						<div class="page-input-sub">{$lng->page_sub_title}</div>
+					</div>
+				</div>
+				
+				<div class="page-input-container">
+					<div class="page-input-title">{$lng->category}</div>
+					<div class="page-input-content">
+					<select name="page_category">
+						<option value="0">{$lng->select_category}</option>
+						<option value="1"{$page_1}>{$lng->page_1}</option>
+						<option value="2"{$page_2}>{$lng->page_2}</option>
+						<option value="3"{$page_3}>{$lng->page_3}</option>
+						<option value="4"{$page_4}>{$lng->page_4}</option>
+						<option value="5"{$page_5}>{$lng->page_5}</option>
+						<option value="6"{$page_6}>{$lng->page_6}</option>
+					</select>
+					<div class="page-input-sub">{$lng->page_sub_category}</div>
+					</div>
+				</div>
+				
+				<div class="page-input-container">
+					<div class="page-input-title">{$lng->profile_image}</div>
+					<div class="page-input-content">
+						<input type="file" name="page_avatar[]">
+						<div class="page-input-sub">{$lng->page_sub_pimg}</div>
+					</div>
+				</div>
+				
+				<div class="page-input-container">
+					<div class="page-input-title">{$lng->cover_image}</div>
+					<div class="page-input-content">
+						<input type="file" name="page_cover[]">
+						<div class="page-input-sub">{$lng->page_sub_cover}</div>
+					</div>
+				</div>
+				{$start_optional}
+				<div class="page-input-container">
+					<div class="page-input-title">{$lng->address}</div>
+					<div class="page-input-content">
+						<input type="text" name="page_address" value="{$current_address}">
+						<div class="page-input-sub">{$lng->page_sub_address}</div>
+					</div>
+				</div>
+				
+				<div class="page-input-container">
+					<div class="page-input-title">{$lng->ttl_website}</div>
+					<div class="page-input-content">
+						<input type="text" name="page_website" value="{$current_website}">
+						<div class="page-input-sub">{$lng->page_sub_website}</div>
+					</div>
+				</div>
+				
+				<div class="page-input-container">
+					<div class="page-input-title">{$lng->phone}</div>
+					<div class="page-input-content">
+						<input type="text" name="page_phone" value="{$current_phone}">
+						<div class="page-input-sub">{$lng->page_sub_phone}</div>
+					</div>
+				</div>
+				{$end_optional}
+				<div class="page-input-container">
+					<div class="page-input-title">{$lng->description}</div>
+					<div class="page-input-content">
+						<textarea class="ads" name="page_desc">{$current_desc}</textarea>
+						<div class="page-input-sub">{$lng->page_sub_description}</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="message-divider"></div>
+			
+			<div class="page-inner">
+				<div class="page-input-title"></div><input type="submit" value="{$page_btn}"> <span class="sidebar-header-link delete-group"{$style}><a href="{$delete_url}" rel="loadpage">{$lng->delete_page}</a></span>
+			</div>
+		</form>
+	</div>
+</div>
+
+<style>
+	[data-tip] {
+	position:relative;
+
+	}
+	[data-tip]:before {
+		content:'';
+		/* hides the tooltip when not hovered */
+		display:none;
+		content:'';
+		border-left: 5px solid transparent;
+		border-right: 5px solid transparent;
+		border-bottom: 5px solid #1a1a1a;	
+		position:absolute;
+		top:30px;
+		left:35px;
+		z-index:8;
+		font-size:0;
+		line-height:0;
+		width:0;
+		height:0;
+	}
+	[data-tip]:after {
+		display:none;
+		content:attr(data-tip);
+		position:absolute;
+		top:35px;
+		left:0px;
+		padding:5px 8px;
+		background:#1a1a1a;
+		color:#fff;
+		z-index:9;
+		font-size: 0.75em;
+		height:18px;
+		line-height:18px;
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		border-radius: 3px;
+		white-space:nowrap;
+		word-wrap:normal;
+	}
+	[data-tip]:hover:before,
+	[data-tip]:hover:after {
+		display:block;
+	}
+</style>

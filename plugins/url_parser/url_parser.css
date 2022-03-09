@@ -1,0 +1,29 @@
+.link-container {
+overflow: auto;
+display: flex;
+justify-content: space-between;
+margin: 10px;
+}
+.link-poster {
+background-position: center center;
+background-repeat: no-repeat;
+background-size: cover;
+height: 100px;
+flex: 0 0 100px;
+margin-right: 10px;
+}
+.link-content {
+width: 100%;
+box-sizing: border-box;
+}
+.link-title {
+font-size: 14px;
+font-weight: bold;
+}
+.link-description, .link-url {
+padding-top: 5px;
+}
+.link-url {
+font-weight: bold;
+color: #999;
+}

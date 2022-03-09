@@ -1,0 +1,53 @@
+RewriteEngine on
+RewriteCond %{request_filename} -f
+RewriteRule ^(.*) 											$1											[L]
+RewriteRule ^(([^/]*)+)?$									index.php?a=$1								[L]
+
+RewriteRule ^welcome/?$										index.php?a=welcome							[NC]
+
+RewriteRule ^feed/?$										index.php?a=feed							[NC]
+RewriteRule ^feed/filter/([^/]+)/?$							index.php?a=feed&filter=$1					[NC]
+RewriteRule ^feed/logout$				        			index.php?a=feed&logout             		[NC]
+
+RewriteRule ^profile/([^/]+)/?$								index.php?a=profile&u=$1					[NC]
+RewriteRule ^profile/([^/]+)/([^/]+)/?$						index.php?a=profile&u=$1&r=$2				[NC]
+RewriteRule ^profile/([^/]+)/filter/([^/]+)/?$				index.php?a=profile&u=$1&filter=$2			[NC]
+
+RewriteRule ^page/?$										index.php?a=page							[NC]
+RewriteRule ^page/([^/]+)/?$								index.php?a=page&name=$1					[NC]
+RewriteRule ^page/deleted/([^/]+)/?$						index.php?a=page&deleted=$1					[NC]
+RewriteRule ^page/([^/]+)/([^/]+)/?$						index.php?a=page&name=$1&r=$2				[NC]
+RewriteRule ^page/([^/]+)/friends/([^/]+)/?$				index.php?a=page&name=$1&friends=$2			[NC]
+
+RewriteRule ^group/?$										index.php?a=group							[NC]
+RewriteRule ^group/([^/]+)/?$								index.php?a=group&name=$1					[NC]
+RewriteRule ^group/deleted/([^/]+)/?$						index.php?a=group&deleted=$1				[NC]
+RewriteRule ^group/([^/]+)/([^/]+)/?$						index.php?a=group&name=$1&r=$2				[NC]
+RewriteRule ^group/([^/]+)/search/([^/]+)/?$				index.php?a=group&name=$1&search=$2			[NC]
+RewriteRule ^group/([^/]+)/friends/([^/]+)/?$				index.php?a=group&name=$1&friends=$2		[NC]
+
+RewriteRule ^notifications/?$								index.php?a=notifications					[NC]
+RewriteRule ^notifications/filter/([^/]+)/?$				index.php?a=notifications&filter=$1			[NC]
+
+RewriteRule ^settings/?$									index.php?a=settings						[NC]
+RewriteRule ^settings/([^/]+)/?$							index.php?a=settings&b=$1					[NC]
+
+RewriteRule ^messages/?$									index.php?a=messages						[NC]
+RewriteRule ^messages/([^/]+)/([^/]+)/?$					index.php?a=messages&u=$1&id=$2				[NC]
+
+RewriteRule ^post/([^/]+)/?$								index.php?a=post&m=$1						[NC]
+
+RewriteRule ^search/([^/]+)/?$								index.php?a=search&q=$1						[NC]
+RewriteRule ^search/tag/([^/]+)/?$							index.php?a=search&tag=$1					[NC]
+RewriteRule ^search/tag/([^/]+)/filter/([^/]+)/?$			index.php?a=search&tag=$1&filter=$2			[NC]
+RewriteRule ^search/groups/([^/]+)/?$						index.php?a=search&groups=$1				[NC]
+RewriteRule ^search/pages/([^/]+)/?$						index.php?a=search&pages=$1					[NC]
+RewriteRule ^search/([^/]+)/filter/([^/]+)/?$				index.php?a=search&q=$1&filter=$2			[NC]
+RewriteRule ^search/([^/]+)/age/([^/]+)/?$					index.php?a=search&q=$1&age=$2				[NC]
+RewriteRule ^search/([^/]+)/age/([^/]+)/filter/([^/]+)/?$	index.php?a=search&q=$1&age=$2&filter=$3	[NC]
+
+RewriteRule ^info/([^/]+)/?$								index.php?a=info&b=$1						[NC]
+
+RewriteRule ^recover/?$										index.php?a=recover							[NC]
+RewriteRule ^recover/do/?$									index.php?a=recover&r=1						[NC]
+RewriteRule ^image/([^/]+)/([^/]+)/([^/]+)/([^/]+)/?$		image.php?t=$1&w=$2&h=$3&src=$4				[NC]

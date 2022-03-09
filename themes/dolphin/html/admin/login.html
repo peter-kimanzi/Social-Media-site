@@ -1,0 +1,35 @@
+<div class="row-page">
+	<div class="twelve columns">
+		<div class="page-login-container">
+			<div class="page-content">
+				<div class="page-header">{$lng->admin_login}</div>
+				{$message}
+				<form action="{$url}/index.php?a=admin" method="post">
+					<div class="page-inner">
+						<div class="page-input-container">
+							<div class="page-input-title">{$lng->admin_user_name}</div>
+							<div class="page-input-content">
+								<input type="text" name="username"><br>
+								<div class="page-input-sub">{$lng->desc_admin_user}</div>
+							</div>
+						</div>
+						<div class="page-input-container">
+							<div class="page-input-title">{$lng->admin_pass}</div>
+							<div class="page-input-content">
+								<input type="password" name="password">
+								<div class="page-input-sub">{$lng->desc_admin_pass}</div>
+							</div>
+						</div>
+					</div>
+					<div class="message-divider"></div>
+					<div class="page-inner">
+						<div class="page-input-title"></div>
+						<div class="page-input-content">
+							<input type="submit" value="{$lng->login}" name="login">
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

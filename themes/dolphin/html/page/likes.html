@@ -1,0 +1,30 @@
+<div class="page-container" id="like_page">
+	<div class="page-content">
+		<div class="page-header">{$lng->admin_ttl_stats}</div>
+		<div class="page-inner">
+			<div class="likes-total">{$total}</div><div>{$lng->total_likes}</div>
+		</div>
+		<div class="message-divider"></div>
+		<div class="page-inner">
+			<div class="page-input-container">
+				<div class="stats-container columns">
+					{$lng->today}
+					<div class="stats-values">{$today}</div>
+				</div>
+				<div class="stats-container columns">
+					{$lng->this_week}
+					<div class="stats-values">{$this_week}</div>
+				</div>
+				<div class="stats-container columns">
+					{$lng->this_month}
+					<div class="stats-values">{$this_month}</div>
+				</div>
+				<div class="stats-container columns">
+					{$lng->this_year}
+					<div class="stats-values">{$this_year}</div>
+				</div>
+			</div>
+		</div>
+		{$latest}
+	</div>
+</div>

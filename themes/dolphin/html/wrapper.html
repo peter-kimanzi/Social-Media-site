@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html class="{$lng->lang_dir}" dir="{$lng->lang_dir}">
+<head>
+<meta charset="UTF-8" />
+<meta name="theme-color" content="#9C27B0"/>
+
+<title>{$title}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="shortcut icon" href="{$url}/{$theme_path}/{$theme_name}/images/favicon.png">
+<link href="{$url}/{$theme_path}/{$theme_name}/style.css" rel="stylesheet" type="text/css">
+<link rel="manifest"	href="/manifest.json">
+<script type="text/javascript">baseUrl = "{$url}"; token_id = "{$token_id}"; search_users_url = "{$search_users_url}"; search_tags_url = "{$search_tags_url}"; search_groups_url = "{$search_groups_url}"; search_pages_url = "{$search_pages_url}"; lng_download = "{$lng->download}"; lng_close = "{$lng->close}"; lng_just_now = "{$lng->just_now}"; lng_ta_second = "{$lng->ta_second}"; lng_ta_seconds = "{$lng->seconds}"; lng_ta_minute = "{$lng->ta_minute}"; lng_ta_minutes = "{$lng->ta_minutes}"; lng_ta_hour = "{$lng->ta_hour}"; lng_ta_hours = "{$lng->ta_hours}"; lng_ta_day = "{$lng->ta_day}"; lng_ta_days = "{$lng->ta_days}"; lng_ta_week = "{$lng->ta_week}"; lng_ta_weeks = "{$lng->ta_weeks}"; lng_ta_month = "{$lng->ta_month}"; lng_ta_months = "{$lng->ta_months}"; lng_ta_year = "{$lng->ta_year}"; lng_ta_years = "{$lng->ta_years}"; lng_ago = "{$lng->ago}"; lng_dir = "{$lng->lang_dir}";</script>
+<script type="text/javascript" src="{$url}/{$theme_url}/js/jquery.js"></script>
+<script type="text/javascript" src="{$url}/{$theme_url}/js/jquery.timeago.js"></script>
+<script type="text/javascript" src="{$url}/{$theme_url}/js/functions.js"></script>
+
+<script type="text/javascript" src="{$url}/notif.js"></script>
+
+<script type="text/javascript">
+
+    
+      
+ function setBadge(...args) {
+  if (navigator.setAppBadge) {
+    navigator.setAppBadge(...args);
+  } else if (navigator.setExperimentalAppBadge) {
+    navigator.setExperimentalAppBadge(...args);
+  } else if (window.ExperimentalBadge) {
+    window.ExperimentalBadge.set(...args);
+  }
+}
+
+
+
+
+function clearBadge() {
+    if (navigator.clearAppBadge) {
+    navigator.clearAppBadge();
+    } else if (navigator.clearExperimentalAppBadge) {
+    navigator.clearExperimentalAppBadge();
+    } else if (window.ExperimentalBadge) {
+    window.ExperimentalBadge.clear();
+     }
+}
+
+butMakeXHR.addEventListener('click', () => {
+  clearBadge();
+});
+
+
+	if('serviceWorker' in navigator) {
+	     //setBadge(25);
+          navigator.serviceWorker.register('sw.js');
+        };
+        
+
+</script>
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KN6HQK16YP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-KN6HQK16YP');
+</script>
+<script data-ad-client="ca-pub-3032563663282940" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+{$styles}{$scripts}
+</head>
+
+<body>
+<div id="loading-bar"><dd></dd><dt></dt></div>
+<div class="topbar">
+	<div class="header" id="butMakeXHR">
+		<a href="{$url_logo}" rel="loadpage"><div class="menu_btn logo-container"><div class="logo"></div></div></a>
+		<div class="search-input"><input type="text" id="search" placeholder="{$lng->search_for_people}" autocomplete="off" value="{$current_search}"></div>
+		<!-- never delete -->
+		{$menu}
+	</div>
+	<div class="search-container"></div>
+</div>
+<div id="content">
+	{$content}
+</div>
+<div id="share">
+	<div class="modal-container">
+		<div class="modal-inner">
+			<div class="modal-title">{$lng->share}</div>
+		</div>
+		<div class="message-divider"></div>
+		<div class="modal-inner">
+			<div class="modal-desc" id="share-desc">{$lng->share_desc}</div>
+			<div class="modal-result" id="share-result"></div>
+		</div>
+		<div class="message-divider"></div>
+		<div class="modal-menu">
+			<div class="modal-cancel button-normal" id="share-cancel"><a onclick="doShare(0, 0)">{$lng->cancel}</a></div>
+			<div class="modal-btn button-active" id="share-btn"><a>{$lng->share}</a></div>
+			<div class="modal-close button-normal" id="share-close"><a onclick="doShare(0, 0)">{$lng->close}</a></div>
+		</div>
+	</div>
+</div>
+<div id="delete">
+	<div class="modal-container">
+		<div class="modal-inner">
+			<div class="modal-title">{$lng->delete}</div>
+		</div>
+		<div class="message-divider"></div>
+		<div class="modal-inner">
+			<div class="modal-desc" id="delete0">{$lng->delete_q_comment}</div>
+			<div class="modal-desc" id="delete1">{$lng->delete_q_message}</div>
+			<div class="modal-desc" id="delete2">{$lng->delete_q_chat}</div>
+			<div class="modal-result"></div>
+		</div>
+		<div class="message-divider"></div>
+		<div class="modal-menu">
+			<div class="modal-cancel button-normal" id="delete-cancel"><a onclick="deleteModal(0, 999)">{$lng->cancel}</a></div>
+			<div class="modal-btn button-active" id="delete-btn"><a>{$lng->delete}</a></div>
+		</div>
+	</div>
+</div>
+<div id="camera">
+	<div class="modal-container modal-container-large modal-container-wide">
+		<div class="modal-inner">
+			<div class="modal-title">{$lng->camera}</div>
+		</div>
+		<div class="message-divider"></div>
+		<div class="modal-inner">
+			<video id="camera-video" width="380" height="285" autoplay></video>
+			<canvas id="camera-canvas" width="380" height="285" style="display: none;"></canvas>
+		</div>
+		<div class="message-divider"></div>
+		<div class="modal-menu">
+			<div class="modal-cancel button-normal" id="camera-cancel"><a onclick="cameraModal(1)">{$lng->cancel}</a></div>
+			<div class="modal-btn button-active" id="camera-btn"><a onclick="cameraModal(2)">{$lng->capture}</a></div>
+			<div class="modal-btn button-active" id="camera-send-btn" style="display: none;"><a onclick="postChatImage(1)">{$lng->send}</a></div>
+		</div>
+	</div>
+</div>
+<div id="gallery">
+	<div id="gallery-close"></div>
+	<div class="image-container">
+		<div class="gallery-container">
+			<div class="image-content"></div>
+			<div id="gallery-prev"></div>
+			<div id="gallery-next"></div>
+			<div class="gallery-close" onclick="gallery('close')"></div>
+			<div class="gallery-footer">
+				<div class="gallery-footer-container">
+					- <a onclick="gallery('close')"><div class="delete_btn"></div></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal-background"></div>
+<div class="footer">
+	<div class="footer-container">
+
+		<div class="footer-languages">
+			{$lng->language}: {$language}
+		</div>
+		<div class="footer-languages">
+		<p>	Copyright &copy; {$year} CareerPal Global. {$lng->all_rights_reserved}.</p>
+		</div>
+	</div>
+</div>
+{$tracking_code}
+</body>
+</html>

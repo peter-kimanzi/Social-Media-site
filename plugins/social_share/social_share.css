@@ -1,0 +1,168 @@
+.social-share-container {
+width: 100%;
+overflow: auto;
+}
+.social-share-content {
+padding: 0 10px 5px 10px;
+float: left;
+}
+.share-icon-container {
+float: left;
+}
+.share-icon-container a {
+cursor: pointer;
+}
+.share-icon-padding {
+padding: 5px 10px 0 0;
+}
+.share-social-icon {
+height: 24px;
+width: 24px;
+border-radius: 3px;
+}
+.facebook-icon {
+background: #EEE url('icons/facebook.png') center center no-repeat;
+background-size: 16px;
+}
+.facebook-icon:hover {
+background: #3b579d url('icons/facebook_h.png') center center no-repeat;
+background-size: 16px;
+}
+.twitter-icon {
+background: #EEE url('icons/twitter.png') center center no-repeat;
+background-size: 16px;
+}
+.twitter-icon:hover {
+background: #55acee url('icons/twitter_h.png') center center no-repeat;
+background-size: 16px;
+}
+.pinterest-icon {
+background: #EEE url('icons/pinterest.png') center center no-repeat;
+background-size: 16px;
+}
+.pinterest-icon:hover {
+background: #D0383F url('icons/pinterest_h.png') center center no-repeat;
+background-size: 16px;
+}
+.pinterest-icon {
+background: #EEE url('icons/pinterest.png') center center no-repeat;
+background-size: 16px;
+}
+.pinterest-icon:hover {
+background: #D0383F url('icons/pinterest_h.png') center center no-repeat;
+background-size: 16px;
+}
+.tumblr-icon {
+background: #EEE url('icons/tumblr.png') center center no-repeat;
+background-size: 16px;
+}
+.tumblr-icon:hover {
+background: #36465D url('icons/tumblr_h.png') center center no-repeat;
+background-size: 16px;
+}
+.vkontakte-icon {
+background: #EEE url('icons/vkontakte.png') center center no-repeat;
+background-size: 16px;
+}
+.vkontakte-icon:hover {
+background: #4d75a3 url('icons/vkontakte_h.png') center center no-repeat;
+background-size: 16px;
+}
+.reddit-icon {
+background: #EEE url('icons/reddit.png') center center no-repeat;
+background-size: 16px;
+}
+.reddit-icon:hover {
+background: #000 url('icons/reddit_h.png') center center no-repeat;
+background-size: 16px;
+}
+.linkedin-icon {
+background: #EEE url('icons/linkedin.png') center center no-repeat;
+background-size: 16px;
+}
+.linkedin-icon:hover {
+background: #007bb5 url('icons/linkedin_h.png') center center no-repeat;
+background-size: 16px;
+}
+.digg-icon {
+background: #EEE url('icons/digg.png') center center no-repeat;
+background-size: 16px;
+}
+.digg-icon:hover {
+background: #000 url('icons/digg_h.png') center center no-repeat;
+background-size: 16px;
+}
+.delicious-icon {
+background: #EEE url('icons/delicious.png') center center no-repeat;
+background-size: 16px;
+}
+.delicious-icon:hover {
+background: #31a9ff url('icons/delicious_h.png') center center no-repeat;
+background-size: 16px;
+}
+.yummly-icon {
+background: #EEE url('icons/yummly.png') center center no-repeat;
+background-size: 16px;
+}
+.yummly-icon:hover {
+background: #e26326 url('icons/yummly_h.png') center center no-repeat;
+background-size: 16px;
+}
+.whatsapp-icon {
+background: #EEE url('icons/whatsapp.png') center center no-repeat;
+background-size: 16px;
+}
+.whatsapp-icon:hover {
+background: #4dc247 url('icons/whatsapp_h.png') center center no-repeat;
+background-size: 16px;
+}
+.viber-icon {
+background: #EEE url('icons/viber.png') center center no-repeat;
+background-size: 16px;
+}
+.viber-icon:hover {
+background: #7c529e url('icons/viber_h.png') center center no-repeat;
+background-size: 16px;
+}
+.evernote-icon {
+background: #EEE url('icons/evernote.png') center center no-repeat;
+background-size: 16px;
+}
+.evernote-icon:hover {
+background: #719D0F url('icons/evernote_h.png') center center no-repeat;
+background-size: 16px;
+}
+.yahoo-icon {
+background: #EEE url('icons/yahoo.png') center center no-repeat;
+background-size: 16px;
+}
+.yahoo-icon:hover {
+background: #400090 url('icons/yahoo_h.png') center center no-repeat;
+background-size: 16px;
+}
+.gmail-icon {
+background: #EEE url('icons/gmail.png') center center no-repeat;
+background-size: 16px;
+}
+.gmail-icon:hover {
+background: #dd4b39 url('icons/gmail_h.png') center center no-repeat;
+background-size: 16px;
+}
+.email-icon {
+background: #EEE url('icons/email.png') center center no-repeat;
+background-size: 16px;
+}
+.email-icon:hover {
+background: #666 url('icons/email_h.png') center center no-repeat;
+background-size: 16px;
+}
+.rtl .social-share-content {
+padding: 0 10px 5px 10px;
+float: right;
+}
+.rtl .share-icon-padding {
+padding: 5px 0 0 10px;
+}
+.rtl .share-icon-container {
+float: right;
+}

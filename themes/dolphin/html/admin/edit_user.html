@@ -1,0 +1,408 @@
+{$message}
+<div class="page-inner"><div class="users-button button-normal"><a href="{$url}/index.php?a=admin&b=users&delete={$idu}&deleted={$username}&token_id={$token_id}">{$lng->delete}</a></div>{$user}</div>
+<div class="message-divider" style="float: inherit;"></div>
+<form action="{$url}/index.php?a=admin&b=users&e={$idu}" method="post">
+{$token_input}
+<div class="page-inner" style="padding-bottom: 0; padding-top: 0;">
+	<div class="edit-menu">
+		<div class="edit-menu-item edit-menu-item-active" id="edit-general">{$lng->user_menu_general}</div>
+		<div class="edit-menu-item" id="edit-notifications">{$lng->user_menu_notifications}</div>
+		<div class="edit-menu-item" id="edit-privacy">{$lng->user_menu_privacy}</div>
+		<div class="edit-menu-item" id="edit-other">{$lng->other}</div>
+	</div>
+</div>
+<div class="edit-general" style="display: block">
+	<div class="page-inner" style="padding-top: 0;">
+		<input name="username" type="hidden" value="{$username}">
+		
+		<div class="page-input-container">
+			<div class="page-input-title">{$lng->ttl_first_name}</div>
+			<div class="page-input-content">
+				<input type="text" name="first_name" value="{$currentFirstName}">
+				<div class="page-input-sub">{$lng->sub_first_name}</div>
+			</div>
+		</div>
+		
+		<div class="page-input-container">
+			<div class="page-input-title">{$lng->ttl_last_name}</div>
+			<div class="page-input-content">
+				<input type="text" name="last_name" value="{$currentLastName}">
+				<div class="page-input-sub">{$lng->sub_last_name}</div>
+			</div>
+		</div>
+
+		<div class="page-input-container">
+			<div class="page-input-title">{$lng->ttl_email}</div>
+			<div class="page-input-content">
+				<input type="text" name="email" value="{$currentEmail}">
+				<div class="page-input-sub">{$lng->sub_email}</div>
+			</div>
+		</div>
+		
+		<div class="page-input-container">
+		<div class="page-input-title">{$lng->ttl_birthdate}</div>
+			<div class="page-input-content">
+			<select name="day">
+				{$days}
+			</select>
+			<select name="month">
+				{$months}
+			</select>
+			<select name="year">
+				{$years}
+			</select>
+			<div class="page-input-sub">{$lng->sub_birthdate}</div>
+			</div>
+		</div>
+		
+		<div class="page-input-container">
+			<div class="page-input-title">{$lng->ttl_gender}</div>
+			<div class="page-input-content">
+			<select name="gender">
+				<option value="0" {$ngender}>{$lng->no_gender}</option>
+				<option value="1" {$mgender}>{$lng->male}</option>
+				<option value="2" {$fgender}>{$lng->female}</option>
+			</select>
+			<div class="page-input-sub">{$lng->sub_gender}</div>
+			</div>
+		</div>
+		
+		<!--
+		<div class="page-input-container">
+			<div class="page-input-title">{$lng->interests}</div>
+			<div class="page-input-content">
+			<select name="interests">
+				<option value="0" {$ninterests}>{$lng->none}</option>
+				<option value="1" {$minterests}>{$lng->men}</option>
+				<option value="2" {$winterests}>{$lng->women}</option>
+			</select>
+			<div class="page-input-sub">{$lng->sub_interested_in}</div>
+			</div>
+		</div>
+-->
+
+		<div class="page-input-container">
+		<div class="page-input-title">{$lng->ttl_country}</div>
+			<div class="page-input-content">
+			<select name="country">
+				{$countries}
+			</select>
+			<div class="page-input-sub">{$lng->sub_country}</div>
+			</div>
+		</div>
+
+		<div class="page-input-container">
+			<div class="page-input-title">{$lng->ttl_location}</div>
+			<div class="page-input-content">
+				<input type="text" name="location" value="{$currentLocation}">
+				<div class="page-input-sub">{$lng->sub_location}</div>
+			</div>
+		</div>
+		
+		<div class="page-input-container">
+			<div class="page-input-title">{$lng->address}</div>
+			<div class="page-input-content">
+				<input type="text" name="address" value="{$currentAddress}">
+				<div class="page-input-sub">{$lng->sub_address}</div>
+			</div>
+		</div>
+		
+		<div class="page-input-container">
+			<div class="page-input-title">{$lng->ttl_work}</div>
+			<div class="page-input-content">
+				<input type="text" name="work" value="{$currentWork}">
+				<div class="page-input-sub">{$lng->sub_work}</div>
+			</div>
+		</div>
+		
+		<div class="page-input-container">
+			<div class="page-input-title">{$lng->ttl_school}</div>
+			<div class="page-input-content">
+				<input type="text" name="school" value="{$currentSchool}">
+				<div class="page-input-sub">{$lng->sub_school}</div>
+			</div>
+		</div>
+
+		<div class="page-input-container">
+			<div class="page-input-title">{$lng->ttl_website}</div>
+			<div class="page-input-content">
+				<input type="text" name="website" value="{$currentWebsite}">
+				<div class="page-input-sub">{$lng->sub_website}</div>
+			</div>
+		</div>
+	</div>
+	<div class="message-divider"></div>
+	<div class="page-inner">
+		<div class="page-input-container">
+			<div class="page-input-title">{$lng->ttl_facebook}</div>
+			<div class="page-input-content">
+				<input type="text" name="facebook" value="{$currentFacebook}">
+				<div class="page-input-sub">{$lng->sub_facebook}</div>
+			</div>
+		</div>
+
+		<div class="page-input-container">
+			<div class="page-input-title">{$lng->ttl_twitter}</div>
+			<div class="page-input-content"><input type="text" name="twitter" value="{$currentTwitter}">
+			<div class="page-input-sub">{$lng->sub_twitter}</div>
+			</div>
+		</div>
+	</div>
+	<div class="message-divider"></div>
+	<div class="page-inner">
+		<div class="page-input-container">
+			<div class="page-input-title">{$lng->ttl_bio}</div>
+			<div class="page-input-content">
+				<textarea class="ads" name="bio">{$currentBio}</textarea>
+				<div class="page-input-sub">{$lng->sub_bio}</div>
+			</div>
+		</div>
+	</div>
+	<div class="message-divider"></div>
+	<div class="page-inner">
+		<div class="page-input-container">
+			<div class="page-input-title">{$lng->join_date}</div>
+			<div class="page-input-content"><input type="text" name="date" value="{$join_date}" disabled>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="edit-notifications" style="display: none;">
+<div class="page-inner" style="padding-top: 0;">
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->ttl_notificationl}</div>
+		<div class="page-input-content">
+			<select name="notificationl">
+				<option value="0" {$loff}>{$lng->off}</option>
+				<option value="1" {$lon}>{$lng->on}</option>
+			</select>
+			<div class="page-input-sub">{$lng->sub_notificationl}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->ttl_notificationc}</div>
+		<div class="page-input-content">
+			<select name="notificationc">
+				<option value="0" {$coff}>{$lng->off}</option>
+				<option value="1" {$con}>{$lng->on}</option>
+			</select>
+			<div class="page-input-sub">{$lng->sub_notificationc}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->ttl_notifications}</div>
+		<div class="page-input-content">
+			<select name="notifications">
+				<option value="0" {$soff}>{$lng->off}</option>
+				<option value="1" {$son}>{$lng->on}</option>
+			</select>
+			<div class="page-input-sub">{$lng->sub_notifications}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->ttl_notificationd}</div>
+		<div class="page-input-content">
+			<select name="notificationd">
+				<option value="0" {$doff}>{$lng->off}</option>
+				<option value="1" {$don}>{$lng->on}</option>
+			</select>
+			<div class="page-input-sub">{$lng->sub_notificationd}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->ttl_notificationf}</div>
+		<div class="page-input-content">
+			<select name="notificationf">
+				<option value="0" {$foff}>{$lng->off}</option>
+				<option value="1" {$fon}>{$lng->on}</option>
+			</select>
+			<div class="page-input-sub">{$lng->sub_notificationf}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->ttl_notificationm}</div>
+		<div class="page-input-content">
+			<select name="notificationm">
+				<option value="0" {$moff}>{$lng->off}</option>
+				<option value="1" {$mon}>{$lng->on}</option>
+			</select>
+			<div class="page-input-sub">{$lng->sub_notificationm}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->ttl_notificationg}</div>
+		<div class="page-input-content">
+			<select name="notificationg">
+				<option value="0" {$goff}>{$lng->off}</option>
+				<option value="1" {$gon}>{$lng->on}</option>
+			</select>
+			<div class="page-input-sub">{$lng->sub_notificationg}</div>
+		</div>
+	</div>
+</div>
+<div class="message-divider"></div>
+<div class="page-inner">
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->ttl_sound_nn}</div>
+		<div class="page-input-content">
+			<select name="sound_new_notification">
+				<option value="0" {$snnoff}>{$lng->off}</option>
+				<option value="1" {$snnon}>{$lng->on}</option>
+			</select>
+			<div class="page-input-sub">{$lng->sub_sound_nn}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->ttl_sound_nc}</div>
+		<div class="page-input-content">
+			<select name="sound_new_chat">
+				<option value="0" {$sncoff}>{$lng->off}</option>
+				<option value="1" {$sncon}>{$lng->on}</option>
+			</select>
+			<div class="page-input-sub">{$lng->sub_sound_nc}</div>
+		</div>
+	</div>
+</div>
+<div class="message-divider"></div>
+<div class="page-inner">
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->ttl_email_comment}</div>
+		<div class="page-input-content">
+			<select name="email_comment">
+				<option value="0" {$ecoff}>{$lng->off}</option>
+				<option value="1" {$econ}>{$lng->on}</option>
+			</select>
+			<div class="page-input-sub">{$lng->sub_email_comment}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->ttl_email_like}</div>
+		<div class="page-input-content">
+			<select name="email_like">
+				<option value="0" {$eloff}>{$lng->off}</option>
+				<option value="1" {$elon}>{$lng->on}</option>
+			</select>
+			<div class="page-input-sub">{$lng->sub_email_like}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->ttl_email_new_friend}</div>
+		<div class="page-input-content">
+			<select name="email_new_friend">
+				<option value="0" {$enfoff}>{$lng->off}</option>
+				<option value="1" {$enfon}>{$lng->on}</option>
+			</select>
+			<div class="page-input-sub">{$lng->sub_email_new_friend}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->ttl_email_mention}</div>
+		<div class="page-input-content">
+			<select name="email_mention">
+				<option value="0" {$emoff}>{$lng->off}</option>
+				<option value="1" {$emon}>{$lng->on}</option>
+			</select>
+			<div class="page-input-sub">{$lng->sub_email_mention}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->ttl_email_group}</div>
+		<div class="page-input-content">
+			<select name="email_group_invite">
+				<option value="0" {$egioff}>{$lng->off}</option>
+				<option value="1" {$egion}>{$lng->on}</option>
+			</select>
+			<div class="page-input-sub">{$lng->sub_email_group}</div>
+		</div>
+	</div>
+</div>
+</div>
+<div class="edit-privacy" style="display: none;">
+	<div class="page-inner" style="padding-top: 0;">
+		<div class="page-input-container">
+			<div class="page-input-title">{$lng->ttl_profile}</div>
+			<div class="page-input-content">
+			<select name="private">
+				<option value="0" {$off}>{$lng->public}</option>
+				<option value="2" {$semi}>{$lng->friends}</option>
+			</select>
+			<div class="page-input-sub">{$lng->sub_profile}</div>
+			</div>
+		</div>
+		
+		<div class="page-input-container">
+			<div class="page-input-title">{$lng->ttl_messages}</div>
+			<div class="page-input-content">
+			<select name="privacy">
+				<option value="1" {$poff}>{$lng->public}</option>
+				<option value="2" {$psemi}>{$lng->friends}</option>
+				<option value="0" {$pon}>{$lng->private}</option>
+			</select>
+			<div class="page-input-sub">{$lng->sub_messages}</div>
+			</div>
+		</div>
+		
+		<div class="page-input-container">
+			<div class="page-input-title">{$lng->ttl_offline}</div>
+			<div class="page-input-content">
+			<select name="offline">
+				<option value="0" {$cooff}>{$lng->opt_offline_off}</option>
+				<option value="1" {$coon}>{$lng->opt_offline_on}</option>
+			</select>
+			<div class="page-input-sub">{$lng->sub_offline}</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="edit-other" style="display: none;">
+	<div class="page-inner" style="padding-top: 0;">
+		<div class="page-input-container">
+			<div class="page-input-title">{$lng->ttl_verified}</div>
+			<div class="page-input-content">
+			<select name="verified">
+				<option value="0" {$off_v}>{$lng->no}</option>
+				<option value="1" {$on_v}>{$lng->yes}</option>
+			</select>
+			<div class="page-input-sub">{$lng->sub_verified}</div>
+			</div>
+		</div>
+		
+		<div class="page-input-container">
+			<div class="page-input-title">{$lng->user_group}</div>
+			<div class="page-input-content">
+			<select name="user_group">
+				<option value="0" {$zero_g}>{$lng->users}</option>
+				<option value="1" {$one_g}>{$lng->moderators}</option>
+			</select>
+			<div class="page-input-sub">{$lng->sub_group}</div>
+			</div>
+		</div>
+		
+		<div class="page-input-container">
+			<div class="page-input-title">{$lng->suspended}</div>
+			<div class="page-input-content">
+			<select name="suspended">
+				<option value="0" {$sus_off}>{$lng->no}</option>
+				<option value="1" {$sus_on}>{$lng->yes}</option>
+			</select>
+			<div class="page-input-sub">{$lng->sub_suspended}</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="message-divider"></div>
+<div class="page-inner">
+	<div class="page-input-title"></div><input type="submit" value="{$lng->save_changes}">
+</div>
+</form>

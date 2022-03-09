@@ -1,0 +1,129 @@
+<div class="page-container" id="edit_group">
+	<div class="page-content">
+		<div class="page-header">{$group_title}</div>
+		{$message}
+		<form action="{$edit_url}" method="POST" enctype="multipart/form-data">
+			{$token_input}
+			<div class="page-inner">
+				<div class="page-input-container">
+					<div class="page-input-title">{$lng->name}</div>
+					<div class="page-input-content">
+					    <div data-tip="Tip: Do not include any space.">
+						    <input type="text" name="group_name" value="{$current_name}"{$disabled}>
+						</div>
+						<div class="page-input-sub">{$lng->group_sub_name}</div>
+					</div>
+				</div>
+				
+				<div class="page-input-container">
+					<div class="page-input-title">{$lng->title}</div>
+					<div class="page-input-content">
+						<input type="text" name="group_title" value="{$current_title}">
+						<div class="page-input-sub">{$lng->group_sub_title}</div>
+					</div>
+				</div>
+				
+				<div class="page-input-container">
+					<div class="page-input-title">{$lng->cover_image}</div>
+					<div class="page-input-content">
+						<input type="file" name="group_cover[]">
+						<div class="page-input-sub">{$lng->group_sub_cover}</div>
+					</div>
+				</div>
+				
+				<div class="page-input-container">
+					<div class="page-input-title">{$lng->privacy}</div>
+					<div class="page-input-content">
+					<select name="group_privacy">
+						<option value="0"{$privacy_public}>{$lng->public}</option>
+						<option value="1"{$privacy_private}>{$lng->private}</option>
+					</select>
+					<div class="page-input-sub">{$lng->group_sub_privacy}</div>
+					</div>
+				</div>
+				
+				<div class="page-input-container">
+					<div class="page-input-title">{$lng->posts}</div>
+					<div class="page-input-content">
+					<select name="group_posts">
+						<option value="0"{$posts_members}>{$lng->any_member}</option>
+						<option value="1"{$posts_admins}>{$lng->admins}</option>
+					</select>
+					<div class="page-input-sub">{$lng->group_sub_posts}</div>
+					</div>
+				</div>
+				
+				<div class="page-input-container">
+					<div class="page-input-title">{$lng->description}</div>
+					<div class="page-input-content">
+						<textarea class="ads" name="group_desc">{$current_desc}</textarea>
+						<div class="page-input-sub">{$lng->group_sub_description}</div>
+					</div>
+				</div>
+				
+				<div class="page-input-container">
+					<div class="page-input-title">{$lng->group_invite_code}</div>
+					<div class="page-input-content">
+						<input type="text" name="group_invite_code" value="{$current_invite_code}" readonly>
+					<div class="page-input-sub">{$lng->group_sub_invite_code}</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="message-divider"></div>
+			
+			<div class="page-inner">
+				<div class="page-input-title"></div><input type="submit" value="{$group_btn}"> <span class="sidebar-header-link delete-group"{$style}><a href="{$delete_url}" rel="loadpage">{$lng->delete_group}</a></span>
+			</div>
+		</form>
+	</div>
+</div>
+
+
+
+<style>
+	[data-tip] {
+	position:relative;
+
+	}
+	[data-tip]:before {
+		content:'';
+		/* hides the tooltip when not hovered */
+		display:none;
+		content:'';
+		border-left: 5px solid transparent;
+		border-right: 5px solid transparent;
+		border-bottom: 5px solid #1a1a1a;	
+		position:absolute;
+		top:30px;
+		left:35px;
+		z-index:8;
+		font-size:0;
+		line-height:0;
+		width:0;
+		height:0;
+	}
+	[data-tip]:after {
+		display:none;
+		content:attr(data-tip);
+		position:absolute;
+		top:35px;
+		left:0px;
+		padding:5px 8px;
+		background:#1a1a1a;
+		color:#fff;
+		z-index:9;
+		font-size: 0.75em;
+		height:18px;
+		line-height:18px;
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		border-radius: 3px;
+		white-space:nowrap;
+		word-wrap:normal;
+	}
+	[data-tip]:hover:before,
+	[data-tip]:hover:after {
+		display:block;
+	}
+</style>

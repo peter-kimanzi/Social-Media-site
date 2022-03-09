@@ -1,0 +1,16 @@
+<div class="page-container" id="delete_group">
+	<div class="page-content">
+		<div class="page-header">{$lng->delete_group}</div>
+		{$message}
+		<div class="page-inner">
+			{$lng->group_delete_desc}
+		</div>
+		<input type="hidden" name="a" value="group">
+		<input type="hidden" name="delete" value="{$id}">
+		<div class="message-divider"></div>
+		
+		<div class="page-inner">
+			<div class="page-input-title"></div><a href="{$url}/index.php?a=group&delete={$id}&token_id={$token_id}"><input type="submit" value="{$lng->delete_group}"></a>
+		</div>
+	</div>
+</div>

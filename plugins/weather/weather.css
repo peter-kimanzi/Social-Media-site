@@ -1,0 +1,64 @@
+.weather-now {
+font-size: 22px;
+font-weight: lighter;
+line-height: 45px;
+padding-left: 10px;
+float: left;
+}
+.weather-icon {
+float: left;
+}
+.weather-icon img {
+height: 45px;
+width: 45px;
+}
+.forecast {
+float: right;
+}
+.low {
+color: #507ACC;
+}
+.high {
+color: #CC5055;
+}
+.forecast img {
+width: 16px;
+height: 16px;
+padding-right: 5px;
+margin-top: -2px;
+}
+.weather-now-info {
+float: right;
+width: 50%;
+text-align: right;
+padding-top: 3px;
+}
+.weather-now-info img {
+width: 10px;
+height: 10px;
+padding-right: 5px;
+}
+.weather-icon-image {
+float: left;
+}
+.rtl .forecast {
+float: left;
+}
+.rtl .weather-now-info {
+float: left;
+text-align: left;
+}
+.rtl .weather-icon {
+float: right;
+}
+.rtl .weather-now-info img {
+padding-left: 5px;
+}
+.rtl .weather-now {
+float: right;
+padding-left: 0;
+padding-right: 10px;
+}
+.rtl .weather-icon-image {
+float: right;
+}

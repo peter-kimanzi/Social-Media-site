@@ -1,0 +1,50 @@
+{$ad1}
+<div class="row-body{$content_class}">
+	{$plugins}
+	{$cover}
+
+	<div>
+		<div class="grid-container">
+			<div class="grid-content" id="messages">
+				{$top}
+				<div id="load-content"></div>
+				{$rows}
+				<div id="profile-card"></div>
+			</div>
+			<div class="grid-sidebar">
+				{$sidebar}
+			</div>
+		</div>
+	</div>
+</div>
+{$ad2}
+<div id="likes" class="modal-large">
+	<div class="modal-container modal-container-large">
+		<div class="modal-inner">
+			<div class="modal-title">{$lng->likes}</div>
+		</div>
+		<div class="message-divider"></div>
+		<div class="modal-inner modal-inner-large">
+			<div id="likes-result" class="modal-listing-results scrollable"></div>
+		</div>
+		<div class="message-divider"></div>
+		<div class="modal-menu">
+			<div class="modal-cancel button-normal" id="delete-cancel"><a onclick="likesModal(0, 0, 1)">{$lng->close}</a></div>
+		</div>
+	</div>
+</div>
+<div id="shares" class="modal-large">
+	<div class="modal-container modal-container-large">
+		<div class="modal-inner">
+			<div class="modal-title">{$lng->shares}</div>
+		</div>
+		<div class="message-divider"></div>
+		<div class="modal-inner modal-inner-large">
+			<div id="shares-result" class="modal-listing-results scrollable"></div>
+		</div>
+		<div class="message-divider"></div>
+		<div class="modal-menu">
+			<div class="modal-cancel button-normal" id="delete-cancel"><a onclick="sharesModal(0, 1)">{$lng->close}</a></div>
+		</div>
+	</div>
+</div>

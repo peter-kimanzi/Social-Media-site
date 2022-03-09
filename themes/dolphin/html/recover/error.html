@@ -1,0 +1,29 @@
+<form action="{$recover_url}" method="POST">
+<div class="page-inner">
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->admin_ttl_username}</div>
+		<div class="page-input-content">
+			<input type="text" name="n" placeholder="{$lng->enter_username}" />
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->reset_key}</div>
+		<div class="page-input-content">
+			<input type="text" name="k" placeholder="{$lng->enter_reset_key}" />
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->ttl_new_password}</div>
+		<div class="page-input-content">
+			<input type="password" name="p" placeholder="{$lng->enter_new_password}" />
+		</div>
+	</div>
+</div>
+
+<div class="message-divider"></div>
+<div class="page-inner">
+	<div class="page-input-title"></div><input type="submit" name="x" value="{$lng->change_password}" />
+</div>
+</form>

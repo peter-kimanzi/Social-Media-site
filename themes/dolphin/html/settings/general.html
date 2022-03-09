@@ -1,0 +1,154 @@
+{$message}
+<form action="{$form_url}" method="post">
+<div class="page-inner">
+	{$token_input}
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->ttl_first_name}</div>
+		<div class="page-input-content">
+			<input type="text" name="first_name" value="{$currentFirstName}">
+			<div class="page-input-sub">{$lng->sub_first_name}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->ttl_last_name}</div>
+		<div class="page-input-content">
+			<input type="text" name="last_name" value="{$currentLastName}">
+			<div class="page-input-sub">{$lng->sub_last_name}</div>
+		</div>
+	</div>
+
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->ttl_email}</div>
+		<div class="page-input-content">
+			<input type="text" name="email" value="{$currentEmail}">
+			<div class="page-input-sub">{$lng->sub_email}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+	<div class="page-input-title">{$lng->ttl_birthdate}</div>
+		<div class="page-input-content">
+		<select name="day">
+			{$days}
+		</select>
+		<select name="month">
+			{$months}
+		</select>
+		<select name="year">
+			{$years}
+		</select>
+		<div class="page-input-sub">{$lng->sub_birthdate}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->ttl_gender}</div>
+		<div class="page-input-content">
+		<select name="gender">
+			<option value="0" {$ngender}>{$lng->no_gender}</option>
+			<option value="1" {$mgender}>{$lng->male}</option>
+			<option value="2" {$fgender}>{$lng->female}</option>
+		</select>
+		<div class="page-input-sub">{$lng->sub_gender}</div>
+		</div>
+	</div>
+	
+	
+	<!--
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->interests}</div>
+		<div class="page-input-content">
+		<select name="interests">
+			<option value="0" {$ninterests}>{$lng->none}</option>
+			<option value="1" {$minterests}>{$lng->men}</option>
+			<option value="2" {$winterests}>{$lng->women}</option>
+		</select>
+		<div class="page-input-sub">{$lng->sub_interested_in}</div>
+		</div>
+	</div>
+	-->
+	
+	
+	<div class="page-input-container">
+	<div class="page-input-title">{$lng->ttl_country}</div>
+		<div class="page-input-content">
+		<select name="country">
+			{$countries}
+		</select>
+		<div class="page-input-sub">{$lng->sub_country}</div>
+		</div>
+	</div>
+
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->ttl_location}</div>
+		<div class="page-input-content">
+			<input type="text" name="location" value="{$currentLocation}">
+			<div class="page-input-sub">{$lng->sub_location}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->address}</div>
+		<div class="page-input-content">
+			<input type="text" name="address" value="{$currentAddress}">
+			<div class="page-input-sub">{$lng->sub_address}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->ttl_work}</div>
+		<div class="page-input-content">
+			<input type="text" name="work" value="{$currentWork}">
+			<div class="page-input-sub">{$lng->sub_work}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->ttl_school}</div>
+		<div class="page-input-content">
+			<input type="text" name="school" value="{$currentSchool}">
+			<div class="page-input-sub">{$lng->sub_school}</div>
+		</div>
+	</div>
+
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->ttl_website}</div>
+		<div class="page-input-content">
+			<input type="text" name="website" value="{$currentWebsite}">
+			<div class="page-input-sub">{$lng->sub_website}</div>
+		</div>
+	</div>
+</div>
+<div class="message-divider"></div>
+<div class="page-inner">
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->ttl_facebook}</div>
+		<div class="page-input-content">
+			<input type="text" name="facebook" value="{$currentFacebook}">
+			<div class="page-input-sub">{$lng->sub_facebook}</div>
+		</div>
+	</div>
+
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->ttl_twitter}</div>
+		<div class="page-input-content"><input type="text" name="twitter" value="{$currentTwitter}">
+		<div class="page-input-sub">{$lng->sub_twitter}</div>
+		</div>
+	</div>
+</div>
+<div class="message-divider"></div>
+<div class="page-inner">
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->ttl_bio}</div>
+		<div class="page-input-content">
+			<textarea class="ads" name="bio">{$currentBio}</textarea>
+			<div class="page-input-sub">{$lng->sub_bio}</div>
+		</div>
+	</div>
+</div>
+<div class="message-divider"></div>
+<div class="page-inner">
+	<div class="page-input-title"></div><input type="submit" value="{$lng->save_changes}">
+</div>
+</form>

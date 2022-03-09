@@ -1,0 +1,68 @@
+#cookie-law-banner {
+width: 100%;
+color: #FFF;
+position: fixed;
+z-index: 1001;
+font-size: 12px;
+}
+.cookie-law-banner-top {
+top: 0;
+}
+.cookie-law-banner-bottom {
+bottom: 0;
+}
+#cookie-law-content {
+margin: 0 auto;
+max-width: 900px;
+padding: 0 10px;
+line-height: 47px;
+}
+.cookie-law-button {
+float: right;
+background: rgba(255, 255, 255, 0.90);
+color: #000;
+padding: 5px 10px;
+margin: 10px 0 10px 10px;
+border-radius: 5px;
+line-height: normal;
+}
+.cookie-law-button:hover {
+background: #FFF;
+}
+.cookie-law-button a {
+text-decoration: none;
+}
+.cookie-law-banner-black {
+background: rgba(0, 0, 0, 0.85);
+}
+.cookie-law-banner-gray {
+background: rgba(138, 138, 138, 0.85);
+}
+.cookie-law-banner-brown {
+background: rgba(112, 85, 38, 0.85);
+}
+.cookie-law-banner-red {
+background: rgba(195, 30, 30, 0.85);
+}
+.cookie-law-banner-blue {
+background: rgba(35, 111, 206, 0.85);
+}
+.cookie-law-banner-green {
+background: rgba(46, 138, 45, 0.85);
+}
+.cookie-law-banner-yellow {
+background: rgba(220, 205, 20, 0.85);
+}
+.cookie-law-banner-orange {
+background: rgba(220, 131, 20, 0.85);
+}
+.cookie-law-banner-purple {
+background: rgba(152, 20, 220, 0.85);
+}
+.cookie-law-banner-pink {
+background: rgba(255, 41, 199, 0.85);
+}
+.rtl .cookie-law-button {
+float: left;
+margin: 10px 10px 10px 0;
+}

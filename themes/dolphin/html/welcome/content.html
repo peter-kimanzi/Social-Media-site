@@ -1,0 +1,132 @@
+{$plugins}
+<div class="row-welcome{$content_class}">
+	<div class="row-body">
+		<div class="welcome-inner">
+			<div class="welcome-message">
+				<div class="welcome-title" style="color:#9c27b0">
+				CareerPal
+				</div>
+				<div class="welcome-desc" style="font-size:18px">
+					<p style="line-height:1.6;margin-bottom:10px;">{$lng->welcome_about}</p>
+				  <p style="line-height:1.6;margin-bottom:10px;">{$lng->purpose}</p>
+				  <ul style="list-style: none;" >
+		
+						<li style="margin-bottom: 10px;">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+							<span style="line-height:1.6;margin-bottom:5px; font-size: 15px;">{$lng->advOne} </span>
+						</li>
+						<li style="margin-bottom: 10px;">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+							<span style="line-height:1.6;margin-bottom:5px; font-size: 15px;">{$lng->advTwo} </span>
+						</li>
+						<li style="margin-bottom: 10px;">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+							<span style="line-height:1.6;margin-bottom:5px; font-size: 15px;">{$lng->advThree} </span>
+						</li>
+						<li style="margin-bottom: 10px;">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+							<span style="line-height:1.6;margin-bottom:5px; font-size: 15px;">{$lng->advFour} </span>
+						</li>
+						<li style="margin-bottom: 10px;">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+							<span style="line-height:1.6;margin-bottom:5px; font-size: 15px;">{$lng->advFive} </span>
+						</li>
+					</ul>
+				<p style="line-height:1.6;margin-bottom:10px;">{$lng->nb}</p>
+				</div>
+
+
+			</div>
+			<div class="welcome-inputs">
+			    <div style="margin-top: 10px;">
+			    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+							<span style="line-height:1.6;margin-bottom:5px; font-size: 15px;">Learn Job interview and promotion skills. Get notes for free 
+<a href="https://careerpalglobal.com/index.php?a=welcome">(CLICK HERE)</a></span>
+                </div>
+				<form action="{$welcome_url}" method="POST" autocomplete="off">
+				    <center><p>Already have an account?  Login Here</p></center>
+					{$loginMsg}
+					<input type="text" name="username" placeholder="{$lng->username_or_email}" value="{$login_username}">
+					<input type="password" name="password" placeholder="{$lng->password}" value="{$login_password}">
+					<div class="remember-me"><input type="checkbox" name="remember" id="remember" value="1"{$remember_checked}><label for="remember">{$lng->remember_me}</label></div>
+					<button type="submit" name="login" class="login-button">{$lng->login}</button><span class="forgot-password"><a href="{$recover_url}" rel="loadpage">{$lng->forgot_password}</a></span>
+				</form>
+
+				<form action="{$welcome_url}" method="POST" autocomplete="off">
+				    <center><p>Please fill in this form to create an account.</p></center>
+					{$registerMsg}
+					<!--<input type="text" name="first_name" placeholder="{$lng->first_name}">-->
+					<!--<input type="text" name="last_name" placeholder="{$lng->last_name}">-->
+					<div data-tip="Tip: Do not include any space in your username.">
+						<input type="text" name="username" placeholder="{$lng->username}" value="{$register_username}">
+					</div>
+					<input type="password" name="password" placeholder="{$lng->password}" value="{$register_password}">
+					<input type="password" name="confirmpassword" placeholder="{$lng->confirmpassword}">
+					<input style="display:none" type="text" id="refer" name="refer" placeholder="{$lng->refer}">
+					<input type="text" name="email" placeholder="{$lng->email}" value="{$register_email}">
+					<script	type="text/javascript">
+			
+						(new URL(window.location.href)).searchParams.forEach((x, y) =>
+							document.getElementById("refer").value = x);
+					</script>
+					{$captcha}
+					<div class="remember-me"><input type="checkbox" name="agreement" id="agreement" value="1"{$agreement_checked} checked><label for="agreement">{$agreement}</label></div>
+					<button type="submit" name="register"  class="register-button">{$lng->register}</button>{$fblogin}
+				</form>
+			</div>
+		</div>
+
+		<div class="welcome-users">
+			<div class="welcome-row-title">{$lng->latest_users}</div>
+			{$rows}
+		</div>
+	</div>
+</div>
+{$ad}
+
+<style>
+	[data-tip] {
+	position:relative;
+
+	}
+	[data-tip]:before {
+		content:'';
+		/* hides the tooltip when not hovered */
+		display:none;
+		content:'';
+		border-left: 5px solid transparent;
+		border-right: 5px solid transparent;
+		border-bottom: 5px solid #1a1a1a;	
+		position:absolute;
+		top:30px;
+		left:35px;
+		z-index:8;
+		font-size:0;
+		line-height:0;
+		width:0;
+		height:0;
+	}
+	[data-tip]:after {
+		display:none;
+		content:attr(data-tip);
+		position:absolute;
+		top:35px;
+		left:0px;
+		padding:5px 8px;
+		background:#1a1a1a;
+		color:#fff;
+		z-index:9;
+		font-size: 0.75em;
+		height:18px;
+		line-height:18px;
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		border-radius: 3px;
+		white-space:nowrap;
+		word-wrap:normal;
+	}
+	[data-tip]:hover:before,
+	[data-tip]:hover:after {
+		display:block;
+	}
+</style>

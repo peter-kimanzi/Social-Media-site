@@ -1,0 +1,17 @@
+{$message}
+<div class="page-inner">
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->edit_group}</div>
+		<div class="page-input-content">
+			<form action="{$url}/index.php" method="GET">
+				<input type="hidden" name="a" value="admin">
+				<input type="hidden" name="b" value="manage_groups">
+				<input type="text" name="c" value="" placeholder="{$lng->group_to_edit}"> &nbsp; <input type="submit" value="{$lng->edit}">
+				<div class="page-input-sub">{$lng->group_to_edit_sub}</div>
+			</form>
+		</div>
+	</div>
+</div>
+</div>
+{$groups}
+<div id="groups">
