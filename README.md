@@ -6,7 +6,7 @@ This site allows works exactly like Facebook with some added functionalities
 
 ## License
 
-Copyright (c) 2018 emdeechege
+Copyright (c) 2022 Peter Kimazi
 
 ------------
 
