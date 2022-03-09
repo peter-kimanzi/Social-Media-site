@@ -8,6 +8,8 @@ This site allows works exactly like Facebook with some added functionalities
 * HTML CSS
 * MYSQL
 
+## Built By [Tom Chege](https://github.com/emdeechege/)
+
 
 ## License
 
